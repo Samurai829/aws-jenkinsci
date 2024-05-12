@@ -23,11 +23,12 @@ Luego de escribir la ruta y guardar en el fichero en el Terminal colocamos el co
 Pasos de instalacion en el **LINK oficial de Jenkins** https://jenkins.io/download/-
 Instalacion debe hacerse en el Terminal de la Instancia de EC2.
 
-1- `sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo`
-2- `sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key`
-3- `yum install fontconfig java-17-openjdk`
-4- `yum install jenkins -y`
-5- `service jenkins start`
+PASOS:
+1.    sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+2.    sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+3.    yum install fontconfig java-17-openjdk
+4.    yum install jenkins -y
+5.    service jenkins start
 
 Dentro de la Terminal de la instancia usar el comando `service jenkins status` para verificar el estado de Jenkins una vez instalado, luego tomar la IP publica de la instancia colocando **:8080** para acceder la interfaz de jenkins. 
 
@@ -63,11 +64,13 @@ Descargamos Maven version 3.9.2
 Configuramos las rutas **M2_HOME** y **M2** en **.bash_profile** del usuario y agrégamos a la variable de ruta de la siguiente manera:
 `vi ~/.bash_profile`
 **AGREGAMOS ESTO:**
-    M2_HOME=/opt/maven/apache-maven-3.9.2
-    M2=$M2_HOME/bin
-    PATH=$PATHñ$HOME/bin:$JAVA_HOME:$M2:$M2_HOME:$M2
 
-    **NOTA: En el directorio packages esta el fichero con las rutas correspondientes.
+        M2_HOME=/opt/maven/apache-maven-3.9.2
+        M2=$M2_HOME/bin
+        PATH=$PATHñ$HOME/bin:$JAVA_HOME:$M2:$M2_HOME:$M2
+
+
+**NOTA: En el directorio packages esta el fichero con las rutas correspondientes.**
     
 Cerramos Sesion en la instancia y Accedemos nuevamente para comprobar la version de Maven:
 `mvn --version`
