@@ -23,12 +23,11 @@ Luego de escribir la ruta y guardar en el fichero en el Terminal colocamos el co
 Pasos de instalacion en el **LINK oficial de Jenkins** https://jenkins.io/download/-
 Instalacion debe hacerse en el Terminal de la Instancia de EC2.
 
-PASOS:
-1.    sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
-2.    sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
-3.    yum install fontconfig java-17-openjdk
-4.    yum install jenkins -y
-5.    service jenkins start
+        sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat/jenkins.repo
+        sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io-2023.key
+        yum install fontconfig java-17-openjdk
+        yum install jenkins -y
+        service jenkins start
 
 Dentro de la Terminal de la instancia usar el comando `service jenkins status` para verificar el estado de Jenkins una vez instalado, luego tomar la IP publica de la instancia colocando **:8080** para acceder la interfaz de jenkins. 
 
